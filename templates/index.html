@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой веб сервер</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; background: #1e1e2e; color: white; text-align: center; padding-top: 50px; margin: 0;}
+        .card {
+            background-color: #282c34;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);}
+        input {
+            padding: 10px; font-size: 16px; background: #61dafd; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;}
+        .button:hover {
+                background-color: #21a1f1;}
+        .result {
+            margin-top: 20px; font-size: 20px; color: #98c379; font-weight: bold;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Анкета разработка на Web-Python</h1>
+
+        <form method="POST">
+            <label>Твоё имя:</label><br>
+            <input type = "text" name = "user_name" placeholder = "ввидите имя..." required> <br>
+                
+            <label>Твой возраст:</label><br>
+            <input type = "text" name = "user_age" placeholder = "Сколько лет?" required> <br>
+
+            <button type = "submit">Отправить на серве...р</button>        
+        </form>
+        
+        {% if reply %}
+            <div class = "result">{{ reply }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
