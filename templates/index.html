@@ -2,12 +2,14 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Мой веб сервер</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
         body {
             font-family: Arial, sans-serif; background: #1e1e2e; color: white; text-align: center; padding-top: 50px; margin: 0;}
         .card {
-            background-color: #282c34;
+            background-color: #3e5888;
             display: inline-block;
             padding: 30px;
             border-radius: 12px;
@@ -22,6 +24,20 @@
         .btn:hover {
             opacity: 0.9;
         }
+        .select
+        {
+            width: 200px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #333;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            appearance: none; /* Убираем стандартную стрелку */
+            -webkit-appearance: none; /* Для Chrome, Safari */
+            -moz-appearance: none; /* Для Firefox */
+        }
     </style>
 </head>
 <body>
@@ -29,18 +45,43 @@
         <h1>Анкета разработка на Web-Python</h1>
 
         <form method="POST">
-            <label>Твоё имя:</label><br>
-            <input type = "text" name = "user_name" placeholder = "ввидите имя..." required> <br>
+            <fieldset>
+                <p>
+                    <label>Твоё имя:</label><br>
+                    <input type = "text" name = "user_name" placeholder = "ввидите имя..." required>
+                </p>
                 
-            <label>Твой возраст:</label><br>
-            <input type = "text" name = "user_age" placeholder = "Сколько лет?" required> <br>
+                <p>
+                    <label>Твой возраст:</label><br>
+                    <input type = "number" min = "0" name = "user_age" placeholder = "сколько лет?" required>
+                </p>
 
-            <button type = "submit">Отправить на серве...р</button>        
+                <p>
+                    <label>Опыт программирования в годах:</label><br>
+                    <input type = "number" min = "0" name = "user_ageExperience" placeholder = "опыт программирования?" required>
+                </p>
+
+                <p>
+                    <label>Специальность:</label><br>
+                    <select class="select" name = "speciality">
+                        <option>Frontend Developer</option>
+                        <option>Back-эндер(python/flask)</option>
+                        <option>Cyber sec</option>
+                        <option>GameDev</option>
+                    </select>
+                </p>
+
+                <p>
+                    <button class="btn btn-primary" type = "submit">Отправить на серве...</button>        
+                </p>
+            </fieldset>
         </form>
-        
-        {% if reply %}
-            <div class = "result">{{ reply }}</div>
-        {% endif %}
+        <fieldset>
+            {% if reply %}
+                <div class = "result">{{ reply }}</div>
+            {% endif %}
+        </fieldset>
+
     </div>
 </body>
 </html>
