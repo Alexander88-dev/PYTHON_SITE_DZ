@@ -4,48 +4,13 @@
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Мой веб сервер</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <style>
-        body {
-            font-family: Arial, sans-serif; background: #1e1e2e; color: white; text-align: center; padding-top: 50px; margin: 0;}
-        .card {
-            background-color: #3e5888;
-            display: inline-block;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);}
-        input {
-            padding: 10px; font-size: 16px; background: #61dafd; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;}
-        .button:hover {
-                background-color: #21a1f1;}
-        .result {
-            margin-top: 20px; font-size: 20px; color: #98c379; font-weight: bold;
-        }
-        .btn:hover {
-            opacity: 0.9;
-        }
-        .select
-        {
-            width: 200px;
-            padding: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            color: #333;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            appearance: none; /* Убираем стандартную стрелку */
-            -webkit-appearance: none; /* Для Chrome, Safari */
-            -moz-appearance: none; /* Для Firefox */
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="card">
         <h1>Анкета разработка на Web-Python</h1>
 
         <form method="POST">
-            <fieldset>
                 <p>
                     <label>Твоё имя:</label><br>
                     <input type = "text" name = "user_name" placeholder = "ввидите имя..." required>
@@ -74,14 +39,13 @@
                 <p>
                     <button class="btn btn-primary" type = "submit">Отправить на серве...</button>        
                 </p>
-            </fieldset>
         </form>
-        <fieldset>
+    </div>
+    <div class="card">
             {% if reply %}
                 <div class = "result">{{ reply }}</div>
             {% endif %}
-        </fieldset>
-
     </div>
+
 </body>
 </html>

@@ -1,3 +1,32 @@
-label{
-    color: brown;
+body {
+    font-family: Arial, sans-serif; background: #1e1e2e; color: white; text-align: center; padding-top: 50px; margin: 0;}
+.card {
+    background-color: #3e5888;
+    display: inline-block;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);}
+input {
+    padding: 10px; font-size: 16px; background: #61dafd; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;}
+.button:hover {
+        background-color: #21a1f1;}
+.result {
+    margin-top: 20px; font-size: 20px; color: #98c379; font-weight: bold;
+}
+.btn:hover {
+    opacity: 0.9;
+}
+.select
+{
+    width: 200px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none; /* Убираем стандартную стрелку */
+    -webkit-appearance: none; /* Для Chrome, Safari */
+    -moz-appearance: none; /* Для Firefox */
 }
